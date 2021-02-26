@@ -1,0 +1,32 @@
+from random import randint
+from time import sleep
+pc = randint(1, 3)
+pcchoice = ''
+if pc == 1:
+    pcchoice = 'pedra'
+elif pc == 2:
+    pcchoice = 'papel'
+elif pc == 3:
+    pcchoice = 'tesoura'
+print('Vamos jogar Jokenpô!')
+player = str(input('Pedra, papel ou tesoura?\n>> ')).strip().lower()
+
+if player in 'pedra, papel, tesoura':
+    sleep(1)
+    print('JO')
+    sleep(1)
+    print('KEN')
+    sleep(1)
+    print('PO!')
+    if player == pcchoice:
+        print('Temos um empate! Ambos escolheram {}'.format(player))
+    elif player == 'pedra' and pcchoice == 'tesoura':
+        print('O pc escolheu tesoura... Você ganhou com pedra!')
+    elif player == 'tesoura' and pcchoice == 'papel':
+        print('O pc escolheu papel... Você ganhou com tesoura!')
+    elif player == 'papel' and pcchoice == 'pedra':
+        print('O pc escolheu pedra... Você ganhou com papel!')
+    else:
+        print('O pc escolheu {}... Você perdeu com {}'.format(pcchoice, player))
+else:
+    print('Opção inválida')

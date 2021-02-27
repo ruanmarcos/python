@@ -1,0 +1,16 @@
+print('Irei lhe mostrar a sequência de Fibonacci!')
+elementos = int(input('Digite quantos elementos quer ver da sequência:\n>> '))
+contador = 1
+antigo = 0
+pivot = 0
+atual = 1
+print('0 →', end=' ')
+while contador <= elementos - 1:
+    contador += 1
+    if contador != elementos:
+        print('{} →'.format(atual), end=' ')
+        pivot = atual
+        atual += antigo
+        antigo = pivot
+    else:
+        print('{}'.format(atual), end=' ')
